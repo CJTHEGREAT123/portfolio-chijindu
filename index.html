@@ -122,78 +122,81 @@
 
     <!-- Right: portrait + orbiting instrument panels -->
     <div class="hero__visual" id="heroVisual">
-      <canvas class="rings-canvas" id="ringsCanvas" aria-hidden="true"></canvas>
+      <!-- Scaled as a unit below 860px; the panels position against this. -->
+      <div class="hero__stage">
+        <canvas class="rings-canvas" id="ringsCanvas" aria-hidden="true"></canvas>
 
-      <div class="portrait">
-        <!-- ASSET PENDING: replace with Chijindu's cut-out portrait (PNG, transparent bg). -->
-        <div class="portrait__placeholder" role="img" aria-label="Portrait of Chijindu Nwigwe, pending">
-          <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="silG" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#12D8FF" stop-opacity=".45" />
-                <stop offset="100%" stop-color="#0B6CFF" stop-opacity=".12" />
-              </linearGradient>
-            </defs>
-            <circle cx="100" cy="72" r="42" fill="url(#silG)" />
-            <path d="M18 240c0-45 37-78 82-78s82 33 82 78z" fill="url(#silG)" />
-          </svg>
-          <span class="placeholder-tag">Portrait pending</span>
-        </div>
-      </div>
-
-      <!-- System Status -->
-      <div class="hpanel hpanel--status panel" data-depth="26" data-float="7s">
-        <div class="hpanel__head">Live Builds</div>
-        <ul class="statuslist">
-          <li><span class="dot"></span><span class="statuslist__name">ALCHIVON</span><span class="statuslist__val">Live</span></li>
-          <li><span class="dot"></span><span class="statuslist__name">MediCare</span><span class="statuslist__val">Live</span></li>
-          <li><span class="dot"></span><span class="statuslist__name">LexFord</span><span class="statuslist__val">Live</span></li>
-          <li><span class="dot"></span><span class="statuslist__name">CreativeForge</span><span class="statuslist__val">Live</span></li>
-        </ul>
-      </div>
-
-      <!-- Terminal -->
-      <div class="hpanel hpanel--term panel" data-depth="16" data-float="9s">
-        <div class="term__bar">
-          <span class="term__dots"><i></i><i></i><i></i></span>
-          <span class="term__path">cj@alchivon:~$</span>
-        </div>
-        <pre class="term__body"><code><span class="c-kw">function</span> <span class="c-fn">buildSolution</span>() {
-  <span class="c-kw">const</span> ideas  = <span class="c-fn">transform</span>();
-  <span class="c-kw">const</span> code   = <span class="c-fn">engineer</span>();
-  <span class="c-kw">const</span> impact = <span class="c-fn">deliver</span>();
-  <span class="c-kw">return</span> <span class="c-ok">success</span>;
-}<span class="term__caret"></span></code></pre>
-      </div>
-
-      <!-- API Response -->
-      <div class="hpanel hpanel--api panel" data-depth="32" data-float="8s">
-        <div class="hpanel__head">profile.json</div>
-        <pre class="json"><code>{
-  <span class="c-key">"builds"</span>: <span class="c-str">"websites"</span>,
-  <span class="c-key">"designs"</span>: <span class="c-str">"CAD &amp;
-  graphics"</span>,
-  <span class="c-key">"level"</span>: <span class="c-num">200</span>
-}</code></pre>
-      </div>
-
-      <!-- Architecture -->
-      <div class="hpanel hpanel--arch panel" data-depth="21" data-float="10s">
-        <div class="hpanel__head">Build Flow</div>
-        <div class="arch">
-          <div class="arch__row">
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12z"/><path d="M12 9H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 9h3.5a3.5 3.5 0 1 1-3.5 3.5z"/><path d="M12 16H8.5a3.5 3.5 0 1 0 3.5 3.5z"/></svg>Figma</span>
-            <span class="arch__link"></span>
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M8 8h8l-.5 4.6-3.5 1-3.5-1"/></svg>HTML</span>
-            <span class="arch__link"></span>
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M16.5 7.5h-9l.4 4h8.2l-.5 4.6-3.6 1-3.6-1"/></svg>CSS</span>
-            <span class="arch__link"></span>
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 9v5.5a1.6 1.6 0 0 1-3 .6"/><path d="M17.6 10.2a2 2 0 0 0-3.6 1c0 2 3.4 1.4 3.4 3.3a2 2 0 0 1-3.6.9"/></svg>JavaScript</span>
+        <div class="portrait">
+          <!-- ASSET PENDING: replace with Chijindu's cut-out portrait (PNG, transparent bg). -->
+          <div class="portrait__placeholder" role="img" aria-label="Portrait of Chijindu Nwigwe, pending">
+            <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="silG" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#12D8FF" stop-opacity=".45" />
+                  <stop offset="100%" stop-color="#0B6CFF" stop-opacity=".12" />
+                </linearGradient>
+              </defs>
+              <circle cx="100" cy="72" r="42" fill="url(#silG)" />
+              <path d="M18 240c0-45 37-78 82-78s82 33 82 78z" fill="url(#silG)" />
+            </svg>
+            <span class="placeholder-tag">Portrait pending</span>
           </div>
-          <div class="arch__drop"><i></i><i></i></div>
-          <div class="arch__row arch__row--sub">
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/></svg>Git</span>
-            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 9 15.5H3z"/></svg>Vercel</span>
+        </div>
+
+        <!-- System Status -->
+        <div class="hpanel hpanel--status panel" data-depth="26" data-float="7s">
+          <div class="hpanel__head">Live Builds</div>
+          <ul class="statuslist">
+            <li><span class="dot"></span><span class="statuslist__name">ALCHIVON</span><span class="statuslist__val">Live</span></li>
+            <li><span class="dot"></span><span class="statuslist__name">MediCare</span><span class="statuslist__val">Live</span></li>
+            <li><span class="dot"></span><span class="statuslist__name">LexFord</span><span class="statuslist__val">Live</span></li>
+            <li><span class="dot"></span><span class="statuslist__name">CreativeForge</span><span class="statuslist__val">Live</span></li>
+          </ul>
+        </div>
+
+        <!-- Terminal -->
+        <div class="hpanel hpanel--term panel" data-depth="16" data-float="9s">
+          <div class="term__bar">
+            <span class="term__dots"><i></i><i></i><i></i></span>
+            <span class="term__path">cj@alchivon:~$</span>
+          </div>
+          <pre class="term__body"><code><span class="c-kw">function</span> <span class="c-fn">buildSolution</span>() {
+    <span class="c-kw">const</span> ideas  = <span class="c-fn">transform</span>();
+    <span class="c-kw">const</span> code   = <span class="c-fn">engineer</span>();
+    <span class="c-kw">const</span> impact = <span class="c-fn">deliver</span>();
+    <span class="c-kw">return</span> <span class="c-ok">success</span>;
+  }<span class="term__caret"></span></code></pre>
+        </div>
+
+        <!-- API Response -->
+        <div class="hpanel hpanel--api panel" data-depth="32" data-float="8s">
+          <div class="hpanel__head">profile.json</div>
+          <pre class="json"><code>{
+    <span class="c-key">"builds"</span>: <span class="c-str">"websites"</span>,
+    <span class="c-key">"designs"</span>: <span class="c-str">"CAD &amp;
+    graphics"</span>,
+    <span class="c-key">"level"</span>: <span class="c-num">200</span>
+  }</code></pre>
+        </div>
+
+        <!-- Architecture -->
+        <div class="hpanel hpanel--arch panel" data-depth="21" data-float="10s">
+          <div class="hpanel__head">Build Flow</div>
+          <div class="arch">
+            <div class="arch__row">
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12z"/><path d="M12 9H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 9h3.5a3.5 3.5 0 1 1-3.5 3.5z"/><path d="M12 16H8.5a3.5 3.5 0 1 0 3.5 3.5z"/></svg>Figma</span>
+              <span class="arch__link"></span>
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M8 8h8l-.5 4.6-3.5 1-3.5-1"/></svg>HTML</span>
+              <span class="arch__link"></span>
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M16.5 7.5h-9l.4 4h8.2l-.5 4.6-3.6 1-3.6-1"/></svg>CSS</span>
+              <span class="arch__link"></span>
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 9v5.5a1.6 1.6 0 0 1-3 .6"/><path d="M17.6 10.2a2 2 0 0 0-3.6 1c0 2 3.4 1.4 3.4 3.3a2 2 0 0 1-3.6.9"/></svg>JavaScript</span>
+            </div>
+            <div class="arch__drop"><i></i><i></i></div>
+            <div class="arch__row arch__row--sub">
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/></svg>Git</span>
+              <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 9 15.5H3z"/></svg>Vercel</span>
+            </div>
           </div>
         </div>
       </div>

@@ -351,7 +351,11 @@
   margin-top: 6px; font-size: 9px; color: var(--gray); text-align: center;
 }
 
-.repos { display: grid; gap: 7px; }
+/* min-width:0 on the items too. As grid items they default to min-width:auto,
+   whose automatic minimum is the row's min-content: with a nowrap description
+   inside, that is wider than the phone and the whole page scrolls sideways. */
+.repos { display: grid; gap: 7px; min-width: 0; }
+.repos > * { min-width: 0; }
 .repo {
   display: flex; align-items: center; gap: 10px; padding: 9px 11px;
   border: 1px solid var(--border); border-radius: 9px; background: rgba(255,255,255,.02);
@@ -360,9 +364,16 @@
 .repo__name {
   font-family: var(--font-mono); color: var(--white); white-space: nowrap;
   display: inline-flex; align-items: center; min-height: 24px;
+  flex: 0 1 auto; min-width: 0; overflow: hidden; text-overflow: ellipsis;
 }
 @media (hover: hover) { .repo__name:hover { color: var(--primary); } }
-.repo__desc { color: var(--gray); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* text-overflow cannot shrink a flex item without an explicit min-width: 0.
+   Without it the description's min-content width becomes the row's floor, and
+   once real repo data arrives the card pushes past the viewport on mobile. */
+.repo__desc {
+  color: var(--gray); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  flex: 1 1 auto; min-width: 0;
+}
 .repo__stars { margin-left: auto; color: var(--gray); display: flex; align-items: center; gap: 4px; flex: none; }
 .repo--empty {
   border-style: dashed; border-color: rgba(18,216,255,.28);
@@ -493,6 +504,16 @@
   .certs { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* Hero stage scale, stepped per breakpoint (see the 860px block). */
+/* 560px is the width the hero visual actually gets on a 1440 desktop, so the
+   panels keep the same relationship to the portrait as they do there. The
+   panels overhang the stage on both sides, making the real footprint ~1.28x. */
+@media (max-width: 860px) { :root { --stage-w: 560px; --hs: .86; } }
+@media (max-width: 760px) { :root { --hs: .78; } }
+@media (max-width: 640px) { :root { --hs: .68; } }
+@media (max-width: 520px) { :root { --hs: .56; } }
+@media (max-width: 430px) { :root { --hs: .47; } }
+
 /* ---------- <= 1024px: hero stacks, side-by-side sections unstack ---------- */
 @media (max-width: 1024px) {
   :root { --nav-h: 80px; }
@@ -536,21 +557,17 @@
 
 /* ---------- <= 860px: multi-column grids collapse toward two ---------- */
 @media (max-width: 860px) {
-  /* Below this the floating composition stops working: four absolutely
-     positioned panels at 375px overlap each other and clip at the frame edge.
-     Stack them instead, one readable card at a time, portrait leading. */
-  .hero__visual { min-height: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
-  .rings-canvas { inset: -4% -12%; height: 100%; opacity: .5; }
-  .portrait { width: min(240px, 58%); margin-bottom: 4px; }
-
-  .hpanel {
-    position: static; width: 100%; max-width: 380px;
-    translate: none; animation: none; will-change: auto;
-    box-shadow: 0 12px 30px rgba(0,0,0,.55);
+  /* Keep the floating composition rather than stacking it: the stage is pinned
+     to the width it was designed against and scaled down as a whole, so the
+     panels keep their positions relative to the portrait and nothing clips.
+     --hs is stepped down at each breakpoint below. */
+  .hero__visual { min-height: 0; height: calc(560px * var(--hs)); display: block; }
+  .hero__stage {
+    position: absolute; top: 0; left: 50%;
+    width: var(--stage-w); height: 560px; margin-left: calc(var(--stage-w) / -2);
+    transform: scale(var(--hs)); transform-origin: top center;
   }
-  .hpanel--term { padding: 0; }
-  .term__body { font-size: 11px; }
-  .json { font-size: 11px; }
+  .hpanel { box-shadow: 0 14px 34px rgba(0,0,0,.6); }
   .rail { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .statsbar { grid-template-columns: repeat(2, 1fr); row-gap: 20px; }
   /* Only the second cell in each row should carry a divider */

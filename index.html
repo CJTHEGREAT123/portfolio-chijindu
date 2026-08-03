@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chijindu Nwigwe Francis | Co-Founder at ALCHIVON</title>
+  <meta name="description" content="Chijindu Nwigwe Francis, Co-Founder, Co-CEO and CFO of ALCHIVON. Self-taught web development, programming, CAD and graphic design, alongside an Aeronautical and Astronautical Engineering degree at Afe Babalola University." />
+
+  <link rel="icon" type="image/png" href="assets/logo/alchivon-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Ordered: tokens/primitives first, then the sections that consume them. -->
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/sections.css" />
+
+  <!-- Three.js resolves through this import map to the CDN. Inline modules
+       execute on file://; external module scripts do not. -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.161.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.161.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<!-- ============================ NAV ============================ -->
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a class="nav__logo" href="#home" aria-label="ALCHIVON home">
+      <img src="assets/logo/alchivon-logo.png" alt="ALCHIVON" />
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Primary">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#engineering">Engineering</a>
+      <a href="#skills">Skills</a>
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--glow" href="assets/docs/cv.pdf" download>
+        Download CV
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+      </a>
+      <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ============================ HERO ============================ -->
+<section class="hero" id="home">
+  <!-- Layered lab background. Everything here is transform/opacity only. -->
+  <div class="hero__bg" aria-hidden="true">
+    <div class="blueprint"></div>
+    <div class="circuit">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+        <g class="circuit__traces" fill="none" stroke="currentColor" stroke-width="1">
+          <path d="M-20 140 H180 L230 190 H420 L470 140 H700" />
+          <path d="M-20 320 H120 L170 270 H360 L410 320 H560 L610 370 H820" />
+          <path d="M-20 560 H240 L290 610 H430 L480 560 H660" />
+          <path d="M-20 740 H160 L210 690 H520" />
+          <path d="M1460 200 H1280 L1230 250 H1040 L990 200 H860" />
+          <path d="M1460 430 H1320 L1270 380 H1100 L1050 430 H900" />
+          <path d="M1460 660 H1240 L1190 710 H1000" />
+          <path d="M300 -20 V120 L350 170 V300" />
+          <path d="M1120 920 V760 L1070 710 V540" />
+        </g>
+        <g class="circuit__nodes" fill="currentColor">
+          <circle cx="230" cy="190" r="3.5" /><circle cx="470" cy="140" r="3.5" />
+          <circle cx="170" cy="270" r="3.5" /><circle cx="610" cy="370" r="3.5" />
+          <circle cx="290" cy="610" r="3.5" /><circle cx="480" cy="560" r="3.5" />
+          <circle cx="210" cy="690" r="3.5" /><circle cx="1230" cy="250" r="3.5" />
+          <circle cx="1270" cy="380" r="3.5" /><circle cx="1190" cy="710" r="3.5" />
+          <circle cx="350" cy="170" r="3.5" /><circle cx="1070" cy="710" r="3.5" />
+        </g>
+      </svg>
+    </div>
+    <!-- Columns of drifting source code. Filled by main.js. -->
+    <div class="codeflow" id="codeflow"></div>
+    <div class="hero__wash"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow hero__eyebrow"><b>Co-Founder</b> <span>&bull;</span> <b>Co-CEO</b> <span>&bull;</span> <b>CFO @ ALCHIVON</b></p>
+
+      <h1 class="hero__title" id="heroTitle">
+        <span class="line" data-text="Turning Complex"></span><br />
+        <span class="line" data-text="Ideas Into"></span><br />
+        <span class="line gradient-text" data-text="Scalable Technology."></span>
+      </h1>
+
+      <p class="hero__lede">I'm Chijindu Nwigwe Francis,<br />Co-Founder of ALCHIVON.</p>
+      <p class="hero__sub">I build websites and web applications in HTML, CSS and JavaScript, work in C++, Python and Node.js, and design in AutoCAD and Autodesk Inventor, while studying Aeronautical and Astronautical Engineering at Afe Babalola University.</p>
+
+      <div class="hero__actions">
+        <a class="btn btn--primary" href="#projects">
+          View My Work
+          <svg class="btn__arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a class="btn btn--outline" href="assets/docs/cv.pdf" download>
+          Download CV
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        </a>
+        <a class="btn btn--outline" href="#contact">Let's Build</a>
+      </div>
+    </div>
+
+    <!-- Right: portrait + orbiting instrument panels -->
+    <div class="hero__visual" id="heroVisual">
+      <canvas class="rings-canvas" id="ringsCanvas" aria-hidden="true"></canvas>
+
+      <div class="portrait">
+        <!-- ASSET PENDING: replace with Chijindu's cut-out portrait (PNG, transparent bg). -->
+        <div class="portrait__placeholder" role="img" aria-label="Portrait of Chijindu Nwigwe, pending">
+          <svg viewBox="0 0 200 240" fill="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="silG" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#12D8FF" stop-opacity=".45" />
+                <stop offset="100%" stop-color="#0B6CFF" stop-opacity=".12" />
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="72" r="42" fill="url(#silG)" />
+            <path d="M18 240c0-45 37-78 82-78s82 33 82 78z" fill="url(#silG)" />
+          </svg>
+          <span class="placeholder-tag">Portrait pending</span>
+        </div>
+      </div>
+
+      <!-- System Status -->
+      <div class="hpanel hpanel--status panel" data-depth="26" data-float="7s">
+        <div class="hpanel__head">Live Builds</div>
+        <ul class="statuslist">
+          <li><span class="dot"></span><span class="statuslist__name">ALCHIVON</span><span class="statuslist__val">Live</span></li>
+          <li><span class="dot"></span><span class="statuslist__name">MediCare</span><span class="statuslist__val">Live</span></li>
+          <li><span class="dot"></span><span class="statuslist__name">LexFord</span><span class="statuslist__val">Live</span></li>
+          <li><span class="dot"></span><span class="statuslist__name">CreativeForge</span><span class="statuslist__val">Live</span></li>
+        </ul>
+      </div>
+
+      <!-- Terminal -->
+      <div class="hpanel hpanel--term panel" data-depth="16" data-float="9s">
+        <div class="term__bar">
+          <span class="term__dots"><i></i><i></i><i></i></span>
+          <span class="term__path">cj@alchivon:~$</span>
+        </div>
+        <pre class="term__body"><code><span class="c-kw">function</span> <span class="c-fn">buildSolution</span>() {
+  <span class="c-kw">const</span> ideas  = <span class="c-fn">transform</span>();
+  <span class="c-kw">const</span> code   = <span class="c-fn">engineer</span>();
+  <span class="c-kw">const</span> impact = <span class="c-fn">deliver</span>();
+  <span class="c-kw">return</span> <span class="c-ok">success</span>;
+}<span class="term__caret"></span></code></pre>
+      </div>
+
+      <!-- API Response -->
+      <div class="hpanel hpanel--api panel" data-depth="32" data-float="8s">
+        <div class="hpanel__head">profile.json</div>
+        <pre class="json"><code>{
+  <span class="c-key">"builds"</span>: <span class="c-str">"websites"</span>,
+  <span class="c-key">"designs"</span>: <span class="c-str">"CAD &amp;
+  graphics"</span>,
+  <span class="c-key">"level"</span>: <span class="c-num">200</span>
+}</code></pre>
+      </div>
+
+      <!-- Architecture -->
+      <div class="hpanel hpanel--arch panel" data-depth="21" data-float="10s">
+        <div class="hpanel__head">Build Flow</div>
+        <div class="arch">
+          <div class="arch__row">
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 2h3.5a3.5 3.5 0 0 1 0 7H12z"/><path d="M12 9H8.5a3.5 3.5 0 0 0 0 7H12z"/><path d="M12 9h3.5a3.5 3.5 0 1 1-3.5 3.5z"/><path d="M12 16H8.5a3.5 3.5 0 1 0 3.5 3.5z"/></svg>Figma</span>
+            <span class="arch__link"></span>
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M8 8h8l-.5 4.6-3.5 1-3.5-1"/></svg>HTML</span>
+            <span class="arch__link"></span>
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m4 3 1.6 17L12 21.6 18.4 20 20 3z"/><path d="M16.5 7.5h-9l.4 4h8.2l-.5 4.6-3.6 1-3.6-1"/></svg>CSS</span>
+            <span class="arch__link"></span>
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 9v5.5a1.6 1.6 0 0 1-3 .6"/><path d="M17.6 10.2a2 2 0 0 0-3.6 1c0 2 3.4 1.4 3.4 3.3a2 2 0 0 1-3.6.9"/></svg>JavaScript</span>
+          </div>
+          <div class="arch__drop"><i></i><i></i></div>
+          <div class="arch__row arch__row--sub">
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/></svg>Git</span>
+            <span class="arch__node"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 4 9 15.5H3z"/></svg>Vercel</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ STATS BAR ============================ -->
+<section class="section section--tight statsband" aria-label="At a glance">
+  <div class="container">
+    <div class="statsbar panel reveal-up">
+      <!-- Every figure here must be checkable. No client counts, no years of
+           experience, no lines-of-code totals. -->
+      <div class="statcell">
+        <span class="statcell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 21h12"/></svg></span>
+        <span class="statcell__body"><span class="statcell__num" data-count="4">0</span><span class="statcell__label">Demo Builds</span></span>
+      </div>
+      <div class="statcell">
+        <span class="statcell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16.5 18 22 12 16.5 6"/><polyline points="7.5 6 2 12 7.5 18"/><line x1="13.4" y1="6.6" x2="10.6" y2="17.4"/></svg></span>
+        <span class="statcell__body"><span class="statcell__num" data-count="6">0</span><span class="statcell__label">Core Technologies</span></span>
+      </div>
+      <div class="statcell">
+        <span class="statcell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M3 7l9 5 9-5M12 12v10"/></svg></span>
+        <span class="statcell__body"><span class="statcell__num">2026</span><span class="statcell__label">Co-Founded ALCHIVON</span></span>
+      </div>
+      <div class="statcell">
+        <span class="statcell__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12 12 17 2 12l10-5z"/><path d="M6 14v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/></svg></span>
+        <span class="statcell__body"><span class="statcell__num statcell__num--word">ABUAD</span><span class="statcell__label">Aeronautical &amp; Astronautical Eng.</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ ABOUT + JOURNEY ============================ -->
+<section class="section" id="about">
+  <div class="container aboutband">
+
+    <!-- Photo -->
+    <div class="aboutband__photo reveal-up">
+      <!-- ASSET PENDING: workspace/desk photo of Chijindu. -->
+      <div class="ph aboutphoto">
+        <span class="ph__label">Photo pending<br />At-desk shot</span>
+      </div>
+    </div>
+
+    <!-- About copy -->
+    <div class="aboutband__copy reveal-up">
+      <p class="eyebrow">About Me</p>
+      <h2 class="section-title aboutband__title">Engineering Meets Innovation</h2>
+      <p class="aboutband__text">I study Aeronautical and Astronautical Engineering at Afe Babalola University, and I taught myself software for the same reason I like aircraft: both reward people who understand the whole system. Right now that means writing interfaces in HTML, CSS and JavaScript, working in C++, Python and Node.js, and modelling parts in AutoCAD and Autodesk Inventor, on demo builds where I can take the whole thing apart and put it back together.</p>
+
+      <ul class="identity" data-stagger>
+        <li class="identity__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 21h12"/></svg>
+          <span>Web<br />Development</span>
+        </li>
+        <li class="identity__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+          <span>Problem<br />Solver</span>
+        </li>
+        <li class="identity__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.8 20.2h16.4L3.8 3.8z"/><path d="M3.8 15.4h4M3.8 11h2.6M8.2 20.2v-3.6M12.4 20.2v-2.4"/></svg>
+          <span>CAD<br />&amp; Design</span>
+        </li>
+        <li class="identity__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 8.4 12 3.5l10 4.9-10 4.9z"/><path d="M6.2 10.7V16c0 1.6 2.6 2.9 5.8 2.9s5.8-1.3 5.8-2.9v-5.3"/><path d="M21.4 8.8v5"/></svg>
+          <span>Self-Taught<br />Learner</span>
+        </li>
+        <li class="identity__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="7" r="3.5"/><path d="M22 21v-2a4 4 0 0 0-3-3.9M16 3.6a4 4 0 0 1 0 6.8"/></svg>
+          <span>Team<br />Collaboration</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Journey -->
+    <div class="aboutband__journey reveal-up" id="journey">
+      <h2 class="eyebrow">My Journey</h2>
+      <div class="timeline timeline--wrap">
+        <ol class="jrow">
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16.6 2.9a2.6 2.6 0 0 1 3.7 3.7L7.6 19.3l-4.8 1.1 1.1-4.8z"/><path d="m14.6 4.9 4.5 4.5"/></svg></span><span class="tnode__label">Learned<br />Design Tools</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 9h20M6 21h12"/></svg></span><span class="tnode__label">HTML<br />&amp; CSS</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M10 9v5.5a1.6 1.6 0 0 1-3 .6"/><path d="M17.6 10.2a2 2 0 0 0-3.6 1c0 2 3.4 1.4 3.4 3.3a2 2 0 0 1-3.6.9"/></svg></span><span class="tnode__label">JavaScript</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="1.5"/><rect x="2" y="15" width="20" height="6" rx="1.5"/><path d="M6 6h.01M6 18h.01"/></svg></span><span class="tnode__label">C++, Python<br />&amp; Node.js</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.8 20.2h16.4L3.8 3.8z"/><path d="M3.8 15.4h4M3.8 11h2.6M8.2 20.2v-3.6M12.4 20.2v-2.4"/></svg></span><span class="tnode__label">AutoCAD<br />&amp; Inventor</span></li>
+        </ol>
+        <ol class="jrow">
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12 12 17 2 12l10-5z"/><path d="M6 14v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/></svg></span><span class="tnode__label">Aero. Eng.<br />at ABUAD</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7z"/><path d="M12 12v10M3 7l9 5 9-5"/></svg></span><span class="tnode__label">Co-Founded<br />ALCHIVON</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 8.4 4.6v9.2L12 21.2 3.6 16.6V7.4z"/><path d="m3.6 7.4 8.4 4.6 8.4-4.6"/><path d="M12 12v9.2"/></svg></span><span class="tnode__label">Learning<br />Blender &amp; 3D</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h4M8 9v4M15 12h.01M18 10h.01"/><rect x="2" y="6" width="20" height="12" rx="5"/></svg></span><span class="tnode__label">Learning<br />Unreal Engine</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3"/></svg></span><span class="tnode__label">The Future<br />And Beyond</span></li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ FEATURED PROJECTS ============================ -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-head">
+      <h2 class="eyebrow" style="margin-bottom:0">Things I’ve Built</h2>
+      <div class="railnav">
+        <a class="btn btn--ghost" href="https://www.alchivon.com/" target="_blank" rel="noopener noreferrer">All Demos
+          <svg class="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+        </a>
+      </div>
+    </div>
+
+
+      <ul class="rail" id="projRail" data-stagger>
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-alchivon.jpg" alt="ALCHIVON company website" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">ALCHIVON Website</h3>
+            <p class="project__type">Company Website</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+            <p class="project__desc">The company site for ALCHIVON, covering services, projects, process, pricing and team.</p>
+            <a class="project__link" href="https://www.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-portfolio.jpg" alt="Chijindu Nwigwe Francis portfolio site" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">Personal Portfolio</h3>
+            <p class="project__type">Personal Website</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Three.js</li></ul>
+            <p class="project__desc">This site. Hand-written HTML, CSS and JavaScript with Three.js for the 3D scenes, no framework and no build step.</p>
+            <a class="project__link" href="https://portfolio-chijindu.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-medicare.jpg" alt="MediCare demo site" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">MediCare</h3>
+            <p class="project__type">Demo Build</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+            <p class="project__desc">Healthcare site with appointment booking, doctor profiles, services and insurance sections.</p>
+            <a class="project__link" href="https://demo-medicare.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-lexford.jpg" alt="LexFord Law Partners demo site" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">LexFord</h3>
+            <p class="project__type">Demo Build</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+            <p class="project__desc">Law firm site covering practice areas, attorney profiles and consultation booking.</p>
+            <a class="project__link" href="https://demo-lexford.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-creativeforge.jpg" alt="CreativeForge demo site" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">CreativeForge</h3>
+            <p class="project__type">Demo Build</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+            <p class="project__desc">Creative agency site with a work showcase, service breakdown and enquiry flow.</p>
+            <a class="project__link" href="https://demo-creativeforge.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+
+        <li class="project panel lift reveal-up">
+          <div class="project__shot">
+            <img src="assets/img/work-fitelite.jpg" alt="FitElite demo site" loading="lazy" width="2160" height="1350" />
+          </div>
+          <div class="project__body">
+            <h3 class="project__name">FitElite</h3>
+            <p class="project__type">Demo Build</p>
+            <ul class="chips"><li>HTML5</li><li>CSS3</li><li>JavaScript</li></ul>
+            <p class="project__desc">Fitness brand site covering training programmes, trainers and membership plans.</p>
+            <a class="project__link" href="https://demo-fitelite.alchivon.com/" target="_blank" rel="noopener noreferrer">View Live Site
+              <svg class="btn__arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+          </div>
+        </li>
+      </ul>
+  </div>
+</section>
+
+<!-- ============================ EXPERTISE + TECH STACK ============================ -->
+<section class="section" id="engineering">
+  <div class="container expertband">
+
+    <div class="expertband__col">
+      <h2 class="eyebrow">Engineering Expertise</h2>
+      <ul class="expertise" data-stagger>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16.5 18 22 12 16.5 6"/><polyline points="7.5 6 2 12 7.5 18"/><line x1="13.4" y1="6.6" x2="10.6" y2="17.4"/></svg>
+          <span>Frontend<br />Development</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="6" rx="1.5"/><rect x="2" y="15" width="20" height="6" rx="1.5"/><path d="M6 6h.01M6 18h.01"/></svg>
+          <span>Backend<br />&amp; Programming</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.8 20.2h16.4L3.8 3.8z"/><path d="M3.8 15.4h4M3.8 11h2.6M8.2 20.2v-3.6M12.4 20.2v-2.4"/></svg>
+          <span>CAD &amp;<br />Technical Drawing</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 8.4 4.6v9.2L12 21.2 3.6 16.6V7.4z"/><path d="m3.6 7.4 8.4 4.6 8.4-4.6"/><path d="M12 12v9.2"/></svg>
+          <span>3D<br />Modelling</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 0 0 0 18c1.4 0 2.2-.9 2.2-2 0-.6-.2-1-.6-1.4-.4-.4-.6-.8-.6-1.3 0-1 .8-1.8 1.9-1.8h1.4A4.7 4.7 0 0 0 21 9.8C21 6 16.9 3 12 3z"/></svg>
+          <span>Graphic<br />Design</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="9" r="3"/><path d="M6 9v6M18 12c0 4-6 2-6 6"/></svg>
+          <span>Version<br />Control</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 2v6M15 2v6"/><path d="M6 8h12v4a6 6 0 0 1-12 0z"/><path d="M12 18v4"/></svg>
+          <span>API<br />Testing</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 10h-1.3A5 5 0 1 0 8 14h10a4 4 0 0 0 0-8z"/><path d="M12 21v-5M9.5 18.5 12 21l2.5-2.5"/></svg>
+          <span>Deployment<br />&amp; Hosting</span>
+        </li>
+        <li class="expertise__card panel lift reveal-up">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.3 7.6h5.4a6.5 6.5 0 0 1 6.4 7.6l-.3 1.7a2.5 2.5 0 0 1-4.5 1.1l-1.4-1.9H9.1L7.7 18a2.5 2.5 0 0 1-4.5-1.1l-.3-1.7A6.5 6.5 0 0 1 9.3 7.6z"/><path d="M7.4 11.1v2.6M6.1 12.4h2.6"/></svg>
+          <span>Game Dev<br />&amp; 3D <em>(Learning)</em></span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="expertband__col" id="skills">
+      <h2 class="eyebrow">Tech Stack</h2>
+      <div class="stack panel">
+        <div class="stack__col">
+          <h3 class="stack__title">Frontend</h3>
+          <ul class="stack__list">
+            <li><i class="tk tk--html"></i>HTML5</li>
+            <li><i class="tk tk--css"></i>CSS3</li>
+            <li><i class="tk tk--js"></i>JavaScript</li>
+          </ul>
+        </div>
+        <div class="stack__col">
+          <h3 class="stack__title">Backend &amp; Programming</h3>
+          <ul class="stack__list">
+            <li><i class="tk tk--cpp"></i>C++</li>
+            <li><i class="tk tk--py"></i>Python</li>
+            <li><i class="tk tk--node"></i>Node.js</li>
+          </ul>
+        </div>
+        <div class="stack__col">
+          <h3 class="stack__title">Engineering CAD</h3>
+          <ul class="stack__list">
+            <li><i class="tk tk--acad"></i>AutoCAD</li>
+            <li><i class="tk tk--inv"></i>Autodesk Inventor</li>
+          </ul>
+        </div>
+        <div class="stack__col">
+          <h3 class="stack__title">Tools &amp; Tech</h3>
+          <ul class="stack__list">
+            <li><i class="tk tk--gh"></i>Git / GitHub</li>
+            <li><i class="tk tk--docker"></i>Docker</li>
+            <li><i class="tk tk--vercel"></i>Vercel</li>
+            <li><i class="tk tk--postman"></i>Postman</li>
+            <li><i class="tk tk--vs"></i>VS Code</li>
+            <li><i class="tk tk--figma"></i>Figma</li>
+          </ul>
+        </div>
+        <div class="stack__col">
+          <h3 class="stack__title">Creative &amp; 3D</h3>
+          <ul class="stack__list">
+            <li><i class="tk tk--corel"></i>CorelDRAW</li>
+            <li><i class="tk tk--ps"></i>Photoshop</li>
+            <li><i class="tk tk--blender"></i>Blender</li>
+            <li><i class="tk tk--ue"></i>Unreal Engine <em>(Learning)</em></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ DEVELOPMENT PHILOSOPHY ============================ -->
+<section class="section section--tight" id="philosophy">
+  <div class="container">
+    <div class="panel philosophy">
+      <h2 class="eyebrow">How I Build Software</h2>
+      <div class="timeline">
+        <ol class="prow">
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="16.5" y1="16.5" x2="21" y2="21"/></svg></span><span class="tnode__label">Research</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></span><span class="tnode__label">Plan</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2" width="6" height="6" rx="1.5"/><rect x="2" y="16" width="6" height="6" rx="1.5"/><rect x="16" y="16" width="6" height="6" rx="1.5"/><path d="M12 8v4M5 16v-2h14v2"/></svg></span><span class="tnode__label">Architecture</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="16.5 18 22 12 16.5 6"/><polyline points="7.5 6 2 12 7.5 18"/><line x1="13.4" y1="6.6" x2="10.6" y2="17.4"/></svg></span><span class="tnode__label">Code</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 3h6M10 3v6.5L5 19a2 2 0 0 0 1.8 3h10.4A2 2 0 0 0 19 19l-5-9.5V3"/></svg></span><span class="tnode__label">Testing</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2 4.5 13H11l-1 9 8.5-11H12z"/></svg></span><span class="tnode__label">Optimize</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 2-1 5-1 5s3 .5 5-1"/><path d="M9 13c0-5 3-9 9-10 1 6-3 9-8 10z"/><path d="M9 13l2 2"/></svg></span><span class="tnode__label">Deploy</span></li>
+          <li class="tnode"><span class="tnode__dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 1-5.4 5.4L4 17v3h3l5.3-5.3a4 4 0 0 1 5.4-5.4l-2.6 2.6"/></svg></span><span class="tnode__label">Maintain</span></li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CERTIFICATIONS + OPEN SOURCE ============================ -->
+<section class="section" id="opensource">
+  <div class="container osband">
+
+    <!-- Certifications -->
+    <div class="osband__col">
+      <h2 class="eyebrow">Self-Taught Learning</h2>
+      <ul class="certs" data-stagger>
+        <li class="cert panel lift reveal-up">
+          <span class="cert__thumb cert__thumb--mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="16.5 18 22 12 16.5 6"/><polyline points="7.5 6 2 12 7.5 18"/><line x1="13.4" y1="6.6" x2="10.6" y2="17.4"/></svg></span>
+          <h3 class="cert__name">Web Development</h3>
+          <p class="cert__issuer">Self-taught &middot; HTML, CSS, JavaScript</p>
+        </li>
+        <li class="cert panel lift reveal-up">
+          <span class="cert__thumb cert__thumb--mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16.6 2.9a2.6 2.6 0 0 1 3.7 3.7L7.6 19.3l-4.8 1.1 1.1-4.8z"/><path d="m14.6 4.9 4.5 4.5"/></svg></span>
+          <h3 class="cert__name">Graphic Design</h3>
+          <p class="cert__issuer">Self-taught &middot; CorelDRAW, Photoshop</p>
+        </li>
+        <li class="cert panel lift reveal-up">
+          <span class="cert__thumb cert__thumb--mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3.8 20.2h16.4L3.8 3.8z"/><path d="M3.8 15.4h4M3.8 11h2.6M8.2 20.2v-3.6"/></svg></span>
+          <h3 class="cert__name">AutoCAD</h3>
+          <p class="cert__issuer">Self-taught &middot; 2D drafting</p>
+        </li>
+        <li class="cert panel lift reveal-up">
+          <span class="cert__thumb cert__thumb--mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2.8 8.4 4.6v9.2L12 21.2 3.6 16.6V7.4z"/><path d="m3.6 7.4 8.4 4.6 8.4-4.6"/><path d="M12 12v9.2"/></svg></span>
+          <h3 class="cert__name">Autodesk Inventor</h3>
+          <p class="cert__issuer">Self-taught &middot; 3D part modelling</p>
+        </li>
+      </ul>
+      <p class="gh__foot">No formal programming certifications. Every skill above was
+        learned by building with it. Certificates in other subjects can be added here.</p>
+    </div>
+
+    <!-- Open Source: engineering credibility. No numbers until they are real. -->
+    <div class="osband__col">
+      <h2 class="eyebrow">Open Source</h2>
+
+      <div class="panel gh" data-gh-root>
+        <p class="gh__notice" data-gh-notice>
+          <strong>Early days.</strong>
+          This account is new, so the numbers below are small and they are real.
+          They are read live from the GitHub API on every page load, so nothing
+          here is typed in by hand.
+        </p>
+
+        <div class="gh__grid">
+          <div class="gh__stats">
+            <h3 class="gh__subtitle">GitHub</h3>
+            <ul class="ghstats">
+              <li>
+                <span class="ghstat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg></span>
+                <span class="ghstat__val" data-gh="repos">&ndash;</span>
+                <span class="ghstat__label" data-gh-label="repos">Public repositories</span>
+              </li>
+              <li>
+                <span class="ghstat__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/></svg></span>
+                <span class="ghstat__val ghstat__val--word" data-gh="since">&ndash;</span>
+                <span class="ghstat__label">Building in public since</span>
+              </li>
+            </ul>
+            <a class="btn btn--primary btn--sm gh__cta" data-gh-profile href="#contact" aria-disabled="true">View GitHub Profile</a>
+          </div>
+
+          <div class="gh__graph">
+            <h3 class="gh__subtitle gh__subtitle--repos">Repositories</h3>
+            <ul class="repos" data-gh-repos>
+              <li class="repo repo--empty"><span class="ph__label">Loading from github.com&hellip;</span></li>
+            </ul>
+            <p class="gh__foot">Everything Chijindu pushes publicly shows up here automatically.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================ DOWNLOAD CENTER ============================ -->
+<section class="section section--tight" id="downloads">
+  <div class="container">
+    <h2 class="eyebrow">Download Center</h2>
+    <ul class="downloads" data-stagger>
+      <li class="dl panel lift reveal-up">
+        <a href="assets/docs/cv.pdf" download>
+          <span class="dl__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M12 12v5M9.5 14.5 12 17l2.5-2.5"/></svg></span>
+          <span class="dl__body"><strong>Download CV</strong><em>( PDF )</em></span>
+        </a>
+      </li>
+      <li class="dl panel lift reveal-up">
+        <a href="assets/docs/engineering-portfolio.pdf" download>
+          <span class="dl__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><path d="M8 13h8M8 17h5"/></svg></span>
+          <span class="dl__body"><strong>Engineering Portfolio</strong><em>( PDF )</em></span>
+        </a>
+      </li>
+      <li class="dl panel lift reveal-up">
+        <a data-gh-profile href="#contact">
+          <span class="dl__icon"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg></span>
+          <span class="dl__body"><strong>GitHub Profile</strong><em>Explore My Code</em></span>
+        </a>
+      </li>
+      <li class="dl panel lift reveal-up">
+        <a href="#contact">
+          <span class="dl__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 10h18M8 2v4M16 2v4"/><path d="M9.5 15.5 11 17l3.5-3.5"/></svg></span>
+          <span class="dl__body"><strong>Book Consultation</strong><em>Schedule a Call</em></span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============================ FAQ ============================ -->
+<section class="section" id="faq">
+  <div class="container">
+    <h2 class="eyebrow">Frequently Asked Questions</h2>
+      <div class="faq">
+        <div class="faq__col">
+          <details class="faq-item panel">
+            <summary>What can you build right now?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>Multi-page websites in hand-written HTML, CSS and JavaScript, plus scripting and logic in C++, Python and Node.js. The demo builds on this page are the honest evidence of that: practice projects, not client deployments.</p></div>
+          </details>
+          <details class="faq-item panel">
+            <summary>Have you worked with clients?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>Not yet. Everything here is either an ALCHIVON build or a project I made to learn. I would rather say that plainly than dress up a demo as a delivery.</p></div>
+          </details>
+          <details class="faq-item panel">
+            <summary>What is the CAD work for?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>I study Aeronautical and Astronautical Engineering at ABUAD, so AutoCAD and Autodesk Inventor sit alongside the code, doing 2D drafting and 3D part modelling for mechanical and aerospace concepts.</p></div>
+          </details>
+        </div>
+        <div class="faq__col">
+          <details class="faq-item panel">
+            <summary>Do you design as well as build?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>Yes. I taught myself graphic design in CorelDRAW and Photoshop before I got deep into code, and I use Figma to lay an interface out before writing any of it.</p></div>
+          </details>
+          <details class="faq-item panel">
+            <summary>What are you learning next?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>Game development and 3D animation: Unreal Engine with C++, and Blender beyond basic modelling. They are listed separately from my skills for a reason: I am learning them, not claiming them.</p></div>
+          </details>
+          <details class="faq-item panel">
+            <summary>What do you do at ALCHIVON?<span class="faq-item__mark" aria-hidden="true"></span></summary>
+            <div class="faq-item__body"><p>I am a Co-Founder, and I hold the Co-CEO and CFO roles: company strategy and direction, financial planning and budgeting, operations, and working with the team on the product and technical roadmap.</p></div>
+          </details>
+        </div>
+      </div>
+  </div>
+</section>
+
+<!-- ============================ FINAL CTA ============================ -->
+<section class="section cta" id="contact">
+  <div class="container">
+    <div class="cta__panel panel">
+      <canvas class="cta__canvas" id="ctaCanvas" aria-hidden="true"></canvas>
+      <div class="cta__nodes" aria-hidden="true">
+        <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
+          <g stroke="currentColor" stroke-width="1" fill="none">
+            <path d="M40 250 L120 190 L210 220 L300 150 L390 190 L470 120 L560 160" />
+            <path d="M40 120 L130 90 L210 140 L300 60 L400 110 L500 70" />
+          </g>
+          <g fill="currentColor">
+            <circle cx="120" cy="190" r="3" /><circle cx="210" cy="220" r="3" />
+            <circle cx="300" cy="150" r="3.5" /><circle cx="390" cy="190" r="3" />
+            <circle cx="130" cy="90" r="3" /><circle cx="300" cy="60" r="3" />
+            <circle cx="470" cy="120" r="3" /><circle cx="400" cy="110" r="3" />
+          </g>
+        </svg>
+      </div>
+
+      <div class="cta__content">
+        <h2 class="cta__title">Let's Engineer Something<br /><span class="gradient-text">Amazing</span> Together.</h2>
+        <p class="cta__sub">Have a project in mind? Let's build powerful solutions that scale.</p>
+        <div class="cta__actions">
+          <a class="btn btn--primary btn--lg" href="mailto:chijindufrancis2007@gmail.com">Get In Touch</a>
+          <a class="btn btn--outline" data-gh-profile href="#opensource">
+            View GitHub
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+          </a>
+          <a class="btn btn--outline" href="assets/docs/cv.pdf" download>
+            Download CV
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============================ FOOTER ============================ -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo/alchivon-logo.png" alt="ALCHIVON" class="footer__logo" loading="lazy" width="240" height="135" />
+      <p class="footer__tag">Building Technology. Creating Impact.</p>
+    </div>
+
+    <nav class="footer__links" aria-label="Footer">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#engineering">Engineering</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#journey">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer__contact">
+      <h3>Let's Connect</h3>
+      <ul>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+          <a href="mailto:chijindufrancis2007@gmail.com">chijindufrancis2007@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.2a2 2 0 0 1 2.1-.5c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <a href="tel:+2349072180305">0907 218 0305</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Nigeria</span>
+        </li>
+      </ul>
+      <div class="footer__social">
+        <a data-gh-profile href="#opensource" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.7.5.6 5.6.6 11.9c0 5 3.3 9.3 7.8 10.8.6.1.8-.2.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0c2.2-1.5 3.2-1.2 3.2-1.2.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .4.2.7.8.6a11.4 11.4 0 0 0 7.8-10.8C23.4 5.6 18.3.5 12 .5z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/simplycjay1" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.8 3.8 0 0 1-1.38-.9 3.8 3.8 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 6.3a3.54 3.54 0 1 0 0 7.08 3.54 3.54 0 0 0 0-7.08zm0 5.84a2.3 2.3 0 1 1 0-4.6 2.3 2.3 0 0 1 0 4.6zm4.5-5.98a.83.83 0 1 1-1.65 0 .83.83 0 0 1 1.65 0z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/@chijindufrancis" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.2v11.6a2.59 2.59 0 0 1-2.59 2.5 2.59 2.59 0 0 1 0-5.18c.27 0 .53.04.78.12V8.76a5.87 5.87 0 0 0-.78-.05 5.79 5.79 0 1 0 5.79 5.79V8.6a7.44 7.44 0 0 0 4.35 1.4V6.8a4.28 4.28 0 0 1-3.29-.98z"/></svg>
+        </a>
+        <a href="https://x.com/fr18114francis" target="_blank" rel="noopener noreferrer" aria-label="X">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-6.07l-4.76-6.22L5.48 21H2.46l7.06-8.07L2.25 3h6.22l4.3 5.69L17.53 3zm-1.06 16.18h1.67L7.6 4.73H5.81l10.66 14.45z"/></svg>
+        </a>
+        <a href="https://snapchat.com/t/doUOL2ZC" target="_blank" rel="noopener noreferrer" aria-label="Snapchat">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.2c2.9 0 4.62 2.1 4.62 4.9 0 .58-.05 1.2-.1 1.75.24.12.55.2.9.2.5 0 .95-.2 1.2-.2.4 0 .8.28.8.68 0 .8-1.53 1.1-1.9 1.35-.2.14-.35.3-.35.55 0 .9 2.3 3.5 4.1 4.1.35.12.5.32.5.6 0 .7-1.4 1.15-2.5 1.32-.15.03-.25.2-.3.45-.06.3-.15.72-.6.72-.5 0-1.1-.2-1.9-.2-1.2 0-1.7.25-2.6.9-.85.6-1.6 1.08-2.87 1.08s-2.02-.48-2.87-1.08c-.9-.65-1.4-.9-2.6-.9-.8 0-1.4.2-1.9.2-.45 0-.54-.42-.6-.72-.05-.25-.15-.42-.3-.45-1.1-.17-2.5-.62-2.5-1.32 0-.28.15-.48.5-.6 1.8-.6 4.1-3.2 4.1-4.1 0-.25-.15-.41-.35-.55-.37-.25-1.9-.55-1.9-1.35 0-.4.4-.68.8-.68.25 0 .7.2 1.2.2.35 0 .66-.08.9-.2-.05-.55-.1-1.17-.1-1.75 0-2.8 1.72-4.9 4.62-4.9z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/chijindu-francis-6565483b6" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05a4.2 4.2 0 0 1 3.75-2c4 0 4.75 2.6 4.75 6V21h-4v-5.6c0-1.35 0-3.1-1.9-3.1s-2.2 1.48-2.2 3v5.7H9z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container footer__bar">
+    <p>&copy; <span id="year">2026</span> ALCHIVON. All rights reserved.</p>
+    <p>Chijindu Nwigwe Francis, Co-Founder, Co-CEO &amp; CFO, ALCHIVON</p>
+  </div>
+</footer>
+
+<!-- Classic scripts (load fine from file://) -->
+<script src="js/logo-data.js"></script>
+<script src="js/main.js" defer></script>
+<script src="js/github.js" defer></script>
+
+<!-- Three.js scenes are INLINED rather than external <script src> so the page
+     runs by simply opening index.html. file:// blocks external module scripts,
+     but INLINE modules execute, and their `import "three"` resolves through the
+     import map to the CDN, which sends Access-Control-Allow-Origin: *.
+     Scope is deliberately limited to two scenes: hero and final CTA. -->
+<script type="module">
+import * as THREE from "three";
+import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+import { SVGLoader } from "three/addons/loaders/SVGLoader.js";
+import { RoundedBoxGeometry } from "three/addons/geometries/RoundedBoxGeometry.js";
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* ==================== HERO: 3D CIRCUIT RINGS ====================
+   Three concentric rings on different axes, each carrying etched
+   "contact pads" and a travelling data node, plus a fine wireframe
+   sphere. Reads as a holographic server/API network rig rather than
+   a decorative globe. */
+(function () {
+  const canvas = document.getElementById("ringsCanvas");
+  if (!canvas) return;
+
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+  } catch (e) { return; }
+
+  const parent = canvas.parentElement;
+  let W = parent.clientWidth, H = parent.clientHeight;
+  if (!W || !H) return;
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.setSize(W, H, false);
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(42, W / H, 0.1, 100);
+  camera.position.set(0, 0, 10);
+
+  scene.add(new THREE.AmbientLight(0x2a4466, 1.4));
+  const key = new THREE.PointLight(0x12d8ff, 45, 40); key.position.set(4, 5, 8); scene.add(key);
+  const rim = new THREE.PointLight(0x0b6cff, 35, 40); rim.position.set(-6, -3, 4); scene.add(rim);
+
+  const rig = new THREE.Group();
+  rig.position.y = 0.3;
+  scene.add(rig);
+
+  const PRIMARY = 0x12d8ff, SECONDARY = 0x0b6cff;
+
+  // --- Rings: torus + pads + a data node that orbits the ring ---
+  const ringDefs = [
+    { r: 3.05, tube: 0.012, tilt: [1.32, 0, 0.22], color: PRIMARY,   pads: 14, speed:  0.16 },
+    { r: 3.6,  tube: 0.009, tilt: [1.05, 0.35, -0.3], color: SECONDARY, pads: 10, speed: -0.11 },
+    { r: 4.15, tube: 0.007, tilt: [1.5, -0.25, 0.5], color: PRIMARY,  pads: 18, speed:  0.07 }
+  ];
+  const rings = [];
+
+  ringDefs.forEach((def) => {
+    const g = new THREE.Group();
+    g.rotation.set(def.tilt[0], def.tilt[1], def.tilt[2]);
+
+    g.add(new THREE.Mesh(
+      new THREE.TorusGeometry(def.r, def.tube, 8, 180),
+      new THREE.MeshBasicMaterial({ color: def.color, transparent: true, opacity: 0.55 })
+    ));
+
+    // Contact pads etched around the ring, giving the "circuit" read
+    const padGeo = new THREE.BoxGeometry(0.16, 0.05, 0.05);
+    const padMat = new THREE.MeshStandardMaterial({
+      color: def.color, emissive: def.color, emissiveIntensity: 0.7, metalness: 0.6, roughness: 0.3
+    });
+    const pads = new THREE.InstancedMesh(padGeo, padMat, def.pads);
+    const m = new THREE.Matrix4(), q = new THREE.Quaternion(), e = new THREE.Euler();
+    const pos = new THREE.Vector3(), scl = new THREE.Vector3(1, 1, 1);
+    for (let i = 0; i < def.pads; i++) {
+      const a = (i / def.pads) * Math.PI * 2;
+      pos.set(Math.cos(a) * def.r, Math.sin(a) * def.r, 0);
+      e.set(0, 0, a);
+      q.setFromEuler(e);
+      m.compose(pos, q, scl);
+      pads.setMatrixAt(i, m);
+    }
+    pads.instanceMatrix.needsUpdate = true;
+    g.add(pads);
+
+    // Travelling data node
+    const node = new THREE.Mesh(
+      new THREE.SphereGeometry(0.075, 12, 12),
+      new THREE.MeshBasicMaterial({ color: 0xffffff })
+    );
+    g.add(node);
+
+    rig.add(g);
+    rings.push({ group: g, node: node, r: def.r, speed: def.speed });
+  });
+
+  // --- Fine wireframe sphere behind the portrait ---
+  const shell = new THREE.Mesh(
+    new THREE.IcosahedronGeometry(2.5, 3),
+    new THREE.MeshBasicMaterial({ color: SECONDARY, wireframe: true, transparent: true, opacity: 0.1 })
+  );
+  rig.add(shell);
+
+  // --- Sparse point field, additive so it glows without lighting cost ---
+  const COUNT = 140;
+  const pts = new Float32Array(COUNT * 3);
+  for (let i = 0; i < COUNT; i++) {
+    const rr = 3.2 + Math.random() * 2.4;
+    const th = Math.random() * Math.PI * 2;
+    const ph = Math.acos(2 * Math.random() - 1);
+    pts[i * 3]     = rr * Math.sin(ph) * Math.cos(th);
+    pts[i * 3 + 1] = rr * Math.sin(ph) * Math.sin(th) * 0.7;
+    pts[i * 3 + 2] = rr * Math.cos(ph);
+  }
+  const cloudGeo = new THREE.BufferGeometry();
+  cloudGeo.setAttribute("position", new THREE.BufferAttribute(pts, 3));
+  rig.add(new THREE.Points(cloudGeo, new THREE.PointsMaterial({
+    color: PRIMARY, size: 0.05, transparent: true, opacity: 0.6, blending: THREE.AdditiveBlending, depthWrite: false
+  })));
+
+  // Bloom is the expensive pass, so skip it on small or low-core devices.
+  let composer = null;
+  const lowPower = W < 760 || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+  if (!lowPower) {
+    composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.62, 0.75, 0.72));
+    // Bloom is a blur, so running it at 1x while the scene renders at DPR costs
+    // a quarter as much on retina and is not visibly different.
+    composer.setPixelRatio(1);
+    composer.setSize(W, H);
+  }
+
+  const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
+  window.addEventListener("pointermove", (e) => {
+    target.x = (e.clientX / window.innerWidth - 0.5) * 2;
+    target.y = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  function resize() {
+    W = parent.clientWidth; H = parent.clientHeight;
+    if (!W || !H) return;
+    camera.aspect = W / H; camera.updateProjectionMatrix();
+    renderer.setSize(W, H, false);
+    if (composer) composer.setSize(W, H);
+  }
+  window.addEventListener("resize", resize);
+
+  let visible = true;
+  new IntersectionObserver((e) => { visible = e[0].isIntersecting; }, { threshold: 0 }).observe(parent);
+
+  const clock = new THREE.Clock();
+  (function frame() {
+    requestAnimationFrame(frame);
+    if (!visible) return;                    // no GPU work while off-screen
+    const t = clock.getElapsedTime();
+
+    cur.x += (target.x - cur.x) * 0.045;
+    cur.y += (target.y - cur.y) * 0.045;
+
+    rings.forEach((r, i) => {
+      if (!reduceMotion) r.group.rotation.z += r.speed * 0.01;
+      const a = t * r.speed * 1.6 + i * 2.1;
+      r.node.position.set(Math.cos(a) * r.r, Math.sin(a) * r.r, 0);
+    });
+
+    if (!reduceMotion) shell.rotation.y += 0.0016;
+    rig.rotation.y = cur.x * 0.28;
+    rig.rotation.x = cur.y * 0.18;
+
+    if (composer) composer.render(); else renderer.render(scene, camera);
+  })();
+
+  resize();
+})();
+
+/* ==================== FINAL CTA: EXTRUDED ALCHIVON LOGO ====================
+   Same asset and same build as the landing page: the traced swoosh SVG is
+   extruded and bloomed. Reused deliberately so the mark reads identically
+   across the site family. Falls back to a rounded card carrying the raster
+   logo if SVG tracing fails for any reason. */
+(function () {
+  const canvas = document.getElementById("ctaCanvas");
+  if (!canvas || !window.LOGO_SVG) return;
+
+  let renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true, powerPreference: "high-performance" });
+  } catch (e) { return; }
+
+  const parent = canvas.parentElement;
+  let W = canvas.clientWidth, H = canvas.clientHeight;
+  if (!W || !H) { W = 400; H = 300; }
+  renderer.setSize(W, H, false);
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(40, W / H, 0.1, 100);
+  camera.position.set(0, 0, 9);
+  scene.add(new THREE.AmbientLight(0x334466, 1.2));
+  const l1 = new THREE.PointLight(0x12d8ff, 50, 40); l1.position.set(5, 5, 8); scene.add(l1);
+  const l2 = new THREE.PointLight(0x0b6cff, 40, 40); l2.position.set(-6, -2, 5); scene.add(l2);
+
+  const holder = new THREE.Group(); scene.add(holder);
+  const spinner = new THREE.Group(); holder.add(spinner);
+  const glowMat = new THREE.MeshStandardMaterial({ color: 0x12d8ff, emissive: 0x0b6cff, emissiveIntensity: 0.9, metalness: 0.6, roughness: 0.25 });
+
+  function buildFallbackCard() {
+    const group = new THREE.Group();
+    group.add(new THREE.Mesh(new RoundedBoxGeometry(3.4, 3.4, 0.35, 6, 0.3),
+      new THREE.MeshPhysicalMaterial({ color: 0x0a1622, metalness: 0.3, roughness: 0.12, transmission: 0.5, thickness: 0.8, transparent: true, opacity: 0.92, emissive: 0x0b2a44, emissiveIntensity: 0.5, clearcoat: 1 })));
+    if (window.LOGO_PNG) {
+      new THREE.TextureLoader().load(window.LOGO_PNG, (tex) => {
+        tex.colorSpace = THREE.SRGBColorSpace;
+        const logo = new THREE.Mesh(new THREE.PlaneGeometry(2.9, 2.9), new THREE.MeshBasicMaterial({ map: tex, transparent: true }));
+        logo.position.z = 0.2; group.add(logo);
+      });
+    }
+    spinner.add(group);
+  }
+
+  function buildExtruded(svgText) {
+    const paths = new SVGLoader().parse(svgText).paths;
+    if (!paths.length) throw new Error("empty");
+    const shapeGroup = new THREE.Group();
+    let count = 0;
+    paths.forEach((p) => {
+      SVGLoader.createShapes(p).forEach((shape) => {
+        const geo = new THREE.ExtrudeGeometry(shape, { depth: 12, bevelEnabled: true, bevelThickness: 3, bevelSize: 2, bevelSegments: 3, steps: 1 });
+        shapeGroup.add(new THREE.Mesh(geo, glowMat)); count++;
+      });
+    });
+    if (!count) throw new Error("no shapes");
+    shapeGroup.scale.y = -1;                       // SVG y-axis points down
+    const box = new THREE.Box3().setFromObject(shapeGroup);
+    const size = new THREE.Vector3(); box.getSize(size);
+    const center = new THREE.Vector3(); box.getCenter(center);
+    shapeGroup.position.sub(center);
+    const s = 3.2 / (Math.max(size.x, size.y) || 1);
+    const group = new THREE.Group(); group.scale.setScalar(s); group.add(shapeGroup);
+    const disc = new THREE.Mesh(new THREE.CircleGeometry(2.3 / s, 48),
+      new THREE.MeshBasicMaterial({ color: 0x0b6cff, transparent: true, opacity: 0.14, blending: THREE.AdditiveBlending }));
+    disc.position.z = -20; group.add(disc);
+    spinner.add(group);
+  }
+
+  try { buildExtruded(window.LOGO_SVG); } catch (e) { buildFallbackCard(); }
+
+  let composer = null;
+  const lowPower = W < 700 || (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4);
+  if (!lowPower) {
+    composer = new EffectComposer(renderer);
+    composer.addPass(new RenderPass(scene, camera));
+    composer.addPass(new UnrealBloomPass(new THREE.Vector2(W, H), 0.9, 0.7, 0.8));
+    composer.setPixelRatio(1);
+    composer.setSize(W, H);
+  }
+
+  const target = { x: 0, y: 0 }, cur = { x: 0, y: 0 };
+  window.addEventListener("pointermove", (e) => {
+    target.x = (e.clientX / window.innerWidth - 0.5) * 2;
+    target.y = (e.clientY / window.innerHeight - 0.5) * 2;
+  }, { passive: true });
+
+  function resize() {
+    W = canvas.clientWidth; H = canvas.clientHeight;
+    if (!W || !H) return;
+    camera.aspect = W / H; camera.updateProjectionMatrix();
+    renderer.setSize(W, H, false);
+    if (composer) composer.setSize(W, H);
+  }
+  window.addEventListener("resize", resize);
+
+  let visible = false;
+  new IntersectionObserver((e) => { visible = e[0].isIntersecting; }, { threshold: 0 }).observe(parent);
+
+  const clock = new THREE.Clock();
+  (function frame() {
+    requestAnimationFrame(frame);
+    if (!visible) return;
+    const t = clock.getElapsedTime();
+    cur.x += (target.x - cur.x) * 0.05; cur.y += (target.y - cur.y) * 0.05;
+    if (reduceMotion) {
+      spinner.rotation.y = cur.x * 0.5; spinner.rotation.x = cur.y * 0.3;
+    } else {
+      spinner.rotation.y += 0.004;
+      spinner.rotation.x = Math.sin(t * 0.5) * 0.18 + cur.y * 0.25;
+      spinner.rotation.z = Math.sin(t * 0.3) * 0.05;
+    }
+    if (composer) composer.render(); else renderer.render(scene, camera);
+  })();
+
+  resize();
+})();
+</script>
+
+</body>
+</html>

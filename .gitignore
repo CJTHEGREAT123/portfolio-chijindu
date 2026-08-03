@@ -1,0 +1,11 @@
+# OS cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Editor
+.vscode/
+.idea/
+
+# Nothing here is built, but keep stray installs out anyway
+node_modules/

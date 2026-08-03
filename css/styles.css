@@ -1,0 +1,236 @@
+/* ============================================================
+   ALCHIVON: Chijindu Nwigwe · Co-Founder / Software Engineer
+   "The Engineer Behind ALCHIVON"
+
+   Design system is the source of truth and is ported verbatim from
+   AlchivonLandingPage/css/styles.css. Dark mode only. Do not re-derive
+   the palette or type, brand consistency across the site family.
+
+   Companion page: Al-Amin (founder/visionary). This page is the
+   ENGINEERING half: same palette, different instrument. Where that
+   page drifts and floats, this one ticks, draws on and reports status.
+   ============================================================ */
+
+/* -------- Tokens -------- */
+:root {
+  /* Palette (locked: identical to landing page) */
+  --bg: #030303;
+  --card: #0B0F14;
+  --primary: #12D8FF;
+  --secondary: #0B6CFF;
+  --white: #FFFFFF;
+  --gray: #A7A7A7;
+
+  /* Derived */
+  --grad: linear-gradient(120deg, var(--primary), var(--secondary));
+  --grad-soft: linear-gradient(120deg, rgba(18,216,255,.16), rgba(11,108,255,.16));
+  --border: rgba(255, 255, 255, 0.08);
+  --border-glow: rgba(18, 216, 255, 0.35);
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-2: rgba(11, 15, 20, 0.55);
+  --shadow-glow: 0 0 40px rgba(18, 216, 255, 0.25);
+
+  /* Engineering-page additions, status semantics for the instrument panels.
+     Green is the only non-brand hue on the page and it is reserved strictly
+     for "system healthy" signals (status dots, contribution heatmap). */
+  --ok: #3FD98B;
+  --ok-dim: rgba(63, 217, 139, 0.14);
+
+  /* Type */
+  --font-head: "Space Grotesk", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  /* Third face, scoped to code/terminal/JSON/counters only. The other pages
+     don't load it because they have no code surfaces. */
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Motion: strong custom curves (emil) */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Layout */
+  --maxw: 1200px;
+  --radius: 18px;
+  --radius-lg: 26px;
+  --radius-sm: 12px;
+  --nav-h: 92px;
+}
+
+/* -------- Reset -------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+h1, h2, h3, h4 { font-family: var(--font-head); font-weight: 700; line-height: 1.08; letter-spacing: -0.02em; }
+ul { list-style: none; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; border-radius: 6px; }
+::selection { background: rgba(18,216,255,.28); }
+
+/* -------- Layout helpers -------- */
+.container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 24px; }
+/* Dense, dashboard-style page: bands sit closer than on the marketing site,
+   so consecutive sections read as one instrument panel rather than as a
+   sequence of separate posters. */
+.section { padding-block: clamp(38px, 4vw, 60px); position: relative; }
+.section--tight { padding-block: clamp(26px, 2.6vw, 38px); }
+.gradient-text {
+  background: var(--grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+/* Most section labels are <h2 class="eyebrow"> so the document outline matches
+   what a reader sees; the h1-h4 rule above would otherwise impose display
+   line-height and tracking on them, so both are reset here. */
+.eyebrow, .kicker {
+  font-family: var(--font-head);
+  font-size: 12px; font-weight: 600; letter-spacing: 0.22em; line-height: 1.5;
+  color: var(--primary); text-transform: uppercase; margin-bottom: 14px;
+}
+.section-title { font-size: clamp(26px, 3.4vw, 40px); }
+.section-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 24px; margin-bottom: 34px; flex-wrap: wrap;
+}
+.section-head--center { justify-content: center; text-align: center; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+
+/* -------- Glass primitive -------- */
+.glass, .card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.01));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.card { background: linear-gradient(180deg, rgba(18,25,34,.7), rgba(11,15,20,.7)); }
+
+/* Panel: the engineering page's workhorse surface. Flatter and more
+   instrument-like than .card: squarer corners, a hairline top highlight
+   that reads as a screen bezel. */
+.panel {
+  position: relative;
+  background: linear-gradient(180deg, rgba(13,20,29,.86), rgba(8,11,16,.9));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.panel::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(18,216,255,.4), transparent);
+  opacity: .6; pointer-events: none;
+}
+
+/* Card lift + glow on hover, shared by every grid card on the page */
+.lift { transition: transform 260ms var(--ease-out), border-color 260ms var(--ease-out), box-shadow 260ms var(--ease-out); will-change: transform; }
+@media (hover: hover) and (pointer: fine) {
+  .lift:hover { transform: translateY(-5px); border-color: var(--border-glow); box-shadow: 0 14px 44px rgba(0,0,0,.5), var(--shadow-glow); }
+}
+
+/* ============================================================
+   BUTTONS  (ported verbatim, plus .btn--mono for code-adjacent CTAs)
+   ============================================================ */
+.btn {
+  --btn-bg: transparent;
+  display: inline-flex; align-items: center; gap: 9px;
+  font-family: var(--font-head); font-weight: 600; font-size: 15px;
+  padding: 13px 24px; border-radius: 999px;
+  transition: transform 160ms var(--ease-out), box-shadow 200ms var(--ease-out),
+              background-color 200ms var(--ease-out), border-color 200ms var(--ease-out),
+              color 200ms var(--ease-out);
+  will-change: transform;
+}
+.btn svg { flex: none; }
+.btn__arrow { transition: transform 200ms var(--ease-out); }
+.btn:active { transform: scale(0.97); }
+
+.btn--primary { background: var(--grad); color: #001018; box-shadow: 0 8px 30px rgba(11,108,255,.35); }
+.btn--outline { border: 1px solid rgba(255,255,255,.18); background: rgba(255,255,255,.02); }
+.btn--ghost { border: 1px solid var(--border); background: rgba(255,255,255,.02); font-size: 14px; padding: 10px 18px; }
+.btn--lg { font-size: 17px; padding: 16px 32px; }
+.btn--sm { font-size: 13.5px; padding: 9px 16px; }
+
+/* The nav CV button: always stands out. A slow ambient pulse keeps it
+   visible without motion that competes with the hero. */
+.btn--glow { background: var(--grad); color: #001018; box-shadow: 0 0 0 rgba(18,216,255,0); animation: cvpulse 3.2s var(--ease-in-out) infinite; }
+@keyframes cvpulse {
+  0%, 100% { box-shadow: 0 0 0 rgba(18,216,255,0), 0 6px 20px rgba(11,108,255,.3); }
+  50%      { box-shadow: 0 0 26px rgba(18,216,255,.55), 0 6px 20px rgba(11,108,255,.3); }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 12px 44px rgba(18,216,255,.5); }
+  .btn--outline:hover { border-color: var(--border-glow); box-shadow: var(--shadow-glow); transform: translateY(-2px); }
+  .btn--ghost:hover { border-color: var(--border-glow); color: var(--primary); }
+  .btn--glow:hover { transform: translateY(-2px); box-shadow: 0 0 34px rgba(18,216,255,.7); animation-play-state: paused; }
+  .btn:hover .btn__arrow { transform: translateX(4px); }
+}
+
+/* ============================================================
+   NAVIGATION
+   ============================================================ */
+.nav {
+  position: fixed; inset: 0 0 auto 0; z-index: 100;
+  height: var(--nav-h); display: flex; align-items: center;
+  transition: background-color 300ms var(--ease-out), border-color 300ms var(--ease-out);
+  border-bottom: 1px solid transparent;
+}
+.nav.is-scrolled {
+  background: rgba(3,3,3,.72);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; width: 100%; }
+.nav__logo img {
+  height: 76px; width: auto;
+  /* the PNG wordmark is a pale gradient that fades on the dark bar, lift it so
+     "ALCHIVON" reads clearly, plus a soft glow for presence */
+  filter: brightness(1.28) contrast(1.06) drop-shadow(0 0 10px rgba(18,180,255,.35));
+}
+.nav__links { display: flex; gap: 30px; }
+.nav__links a {
+  font-family: var(--font-head); font-size: 15.5px; font-weight: 500; color: var(--gray);
+  position: relative; transition: color 200ms var(--ease-out);
+  /* 15px of text is a 15px hit area; pad it out to the WCAG 2.5.8 minimum
+     without moving the baseline (the flex row stays centred). */
+  display: inline-flex; align-items: center; min-height: 26px;
+}
+.nav__links a::after {
+  content: ""; position: absolute; left: 0; bottom: -6px; height: 2px; width: 0;
+  background: var(--grad); border-radius: 2px; transition: width 220ms var(--ease-out);
+}
+@media (hover: hover) { .nav__links a:hover { color: var(--white); } .nav__links a:hover::after { width: 100%; } }
+.nav__links a.is-active { color: var(--white); }
+.nav__links a.is-active::after { width: 100%; }
+.nav__actions { display: flex; align-items: center; gap: 12px; }
+.nav__toggle { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.nav__toggle span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: transform 250ms var(--ease-out), opacity 200ms; }
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ============================================================
+   SCROLL REVEAL  (shared)
+   ============================================================ */
+.js .reveal-up { opacity: 0; transform: translateY(22px); }
+.js .reveal-up.is-in {
+  opacity: 1; transform: none;
+  transition: opacity 620ms var(--ease-out), transform 620ms var(--ease-out);
+}
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal-up { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
